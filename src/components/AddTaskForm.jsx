@@ -4,6 +4,8 @@ import Field from "./Field"
 const AddTaskForm = (props) => {
     const {
         addTask,
+        setNewTaskTitle,
+        newTaskTitle,
     } = props
 
     const onSubmit = (e) => {
@@ -16,6 +18,8 @@ const AddTaskForm = (props) => {
                 className ="todo__field"
                 label="New task title"
                 id="new-task"
+                value = {newTaskTitle}
+                onInput = {(e) => setNewTaskTitle(e.target.value)}
             />
             <Button type = 'submit'>Add</Button>
         </form>
