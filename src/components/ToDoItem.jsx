@@ -1,4 +1,6 @@
-const TodoItem = (props) => {
+import { forwardRef } from "react"
+
+const TodoItem = forwardRef((props, ref) => {
   const {
     className = '',
     id,
@@ -8,7 +10,7 @@ const TodoItem = (props) => {
     onTaskCompleteChange,
   } = props
   return (
-    <li className={`todo-item ${className}`}>
+    <li className={`todo-item ${className}`} ref = {ref}>
       <input
         className="todo-item__checkbox"
         id={id}
@@ -48,6 +50,6 @@ const TodoItem = (props) => {
       </button>
     </li>
   )
-}
+})
 
 export default TodoItem
